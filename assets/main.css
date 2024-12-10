@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+body {
+    /*Tipografia principal*/ font-family: 'Lora Variable', serif;
+    /*Tipografia secundaria*/ font-family: 'Libre Baskerville', serif;
+}
+
+h1, h2, h3, h4 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+li {
+    list-style-type: none;
+}

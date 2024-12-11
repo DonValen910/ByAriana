@@ -13,5 +13,18 @@ export default defineNuxtConfig({
   },
   supabase: {
     redirect: false,
+  },
+  app: {
+    head: {
+      title: 'ByAriana',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'ByAriana es tu salón de belleza de confianza, especializado en manicura, pedicura, lifting de pestañas y más. Visítanos para una experiencia de belleza inigualable.' },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/byariana.png' }
+      ]
+    }
   }
 })

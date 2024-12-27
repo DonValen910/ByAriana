@@ -7,12 +7,10 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase URL or Anon Key');
 }
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey)
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export default defineNuxtPlugin(() => {
-  return {
-    provide: {
-      supabase
-    }
+export default defineNuxtPlugin((nuxtApp) => {
+  if (!nuxtApp.$supabase) {
+    nuxtApp.provide('supabase', supabase);
   }
-})
+});

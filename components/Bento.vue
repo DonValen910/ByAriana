@@ -23,10 +23,6 @@
 </script>
 
 <style>
-.services {
-  margin-top: 3.5rem;
-}
-
 .services__title {
   font-size: 3.25rem;
   text-align: center;

@@ -1,6 +1,7 @@
 <template>
   <main>
     <Bento />
+    <Beneficios />
   </main>
 </template>
 

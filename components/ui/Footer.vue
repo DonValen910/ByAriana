@@ -5,18 +5,18 @@
         <img src="/assets/ByAriana-transparente.png" alt="Logo ByAriana" class="footer__logo">
       </NuxtLink>
       <div class="footer__legal">
-        <h4 class="footer__legal-title">Avisos Legales</h4>
-        <span class="footer__legal-item">Políticas de privacidad</span>
-        <span class="footer__legal-item">Términos de uso</span>
-        <span class="footer__legal-item">© ByAriana | Todos los derechos reservados</span>
+          <h4 class="footer__legal-title">Avisos Legales</h4>
+          <span class="footer__legal-item">Políticas de privacidad</span>
+          <span class="footer__legal-item">Términos de uso</span>
+          <span class="footer__legal-item">© ByAriana | Todos los derechos reservados</span>
       </div>
       <div class="footer__social">
-        <NuxtLink to="/" class="footer__social-link">
-          <img src="/assets/redes/whatsapp.svg" alt="" class="footer__social-icon">
-        </NuxtLink>
-        <NuxtLink to="/" class="footer__social-link">
-          <img src="/assets/redes/instagram.svg" alt="" class="footer__social-icon">
-        </NuxtLink>
+        <a href="https://wa.me/5491138950514" target="_blank" class="footer__social-link">
+          <img src="/assets/redes/whatsapp.svg" alt="Logo de Whatsapp" class="footer__social-icon">
+        </a>
+        <a href="https://www.instagram.com/byariana.ok/" target="_blank" class="footer__social-link">
+          <img src="/assets/redes/instagram.svg" alt="Logo de Instagram" class="footer__social-icon">
+        </a>
       </div>
     </div>
   </footer>
@@ -41,7 +41,7 @@
   justify-content: space-between;
 }
 
-.footer_legal {
+.footer__legal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,5 +51,10 @@
 .footer__social {
   display: flex;
   flex-direction: column;
+}
+
+.footer__social-icon {
+  width: 4rem;
+  height: 4rem;
 }
 </style>

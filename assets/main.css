@@ -31,3 +31,7 @@ img {
 li {
     list-style-type: none;
 }
+
+section {
+    margin-top: 3.5rem;
+}

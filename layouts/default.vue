@@ -1,15 +1,13 @@
 <template>
   <div>
-    <Header />
+    <uiHeader />
     <slot />
-    <Footer />
+    <uiFooter />
   </div>
 </template>
 
 <script lang="ts" setup>
-
 </script>
 
 <style>
-
 </style>

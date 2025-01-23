@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource-variable/lora": "^5.1.0",
     "@fontsource/libre-baskerville": "^5.1.0",
+    "@nuxt/image": "^1.9.0",
     "nuxt": "^3.15.2",
     "vue": "latest",
     "vue-router": "latest"

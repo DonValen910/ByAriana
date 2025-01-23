@@ -5,7 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-
+useHead({
+  title: 'Servicios',
+})
 </script>
 
 <style>

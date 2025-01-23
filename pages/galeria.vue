@@ -5,7 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-
+useHead({
+  title: 'Galeria',
+})
 </script>
 
 <style>

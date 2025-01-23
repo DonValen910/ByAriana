@@ -16,7 +16,6 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'ByAriana',
       htmlAttrs: {
         lang: 'es'
       },

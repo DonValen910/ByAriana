@@ -3,11 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   css: ['./assets/main.css'],
   devtools: { enabled: true },
-  modules: ['@nuxtjs/supabase', '@nuxt/image'],
-  image: {
-    dir: "public",
-    provider: 'ipx'
-  },
+  modules: ['@nuxtjs/supabase'],
   plugins: ['~/plugins/supabase'],
   runtimeConfig: {
     public: {

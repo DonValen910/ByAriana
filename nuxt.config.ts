@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   css: ['./assets/main.css'],
   devtools: { enabled: true },
   modules: ['@nuxtjs/supabase', '@nuxt/image'],
+  image: {
+    dir: "public",
+    provider: 'ipx'
+  },
   plugins: ['~/plugins/supabase'],
   runtimeConfig: {
     public: {

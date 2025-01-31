@@ -3,16 +3,16 @@
     <h1 class="services__title">Servicios</h1>
     <div class="services__bento">
       <div class="services__bento-item services__bento-item--lifting">
-        <NuxtImg width="279" height="546" src="/lifting_1.png" alt="Foto de lifting" />
+        <NuxtImg width="279" height="546" src="lifting_1.png" alt="Foto de lifting" />
       </div>
       <div class="services__bento-item services__bento-item--manicuria">
-        <NuxtImg width="340" height="228" src="/manos_2.png" alt="Foto de manicuria" />
+        <NuxtImg width="340" height="228" src="manos_2.png" alt="Foto de manicuria" />
       </div>
       <div class="services__bento-item services__bento-item--pedicuria">
-        <NuxtImg width="340" height="228" src="/pies_1.png" alt="Foto de pedicuria" />
+        <NuxtImg width="340" height="228" src="pies_1.png" alt="Foto de pedicuria" />
       </div>
       <div class="services__bento-item services__bento-item--facial">
-        <NuxtImg width="745" height="283" src="/facial_1.png" alt="Foto de facial" />
+        <NuxtImg width="745" height="283" src="facial_1.png" alt="Foto de facial" />
       </div>
     </div>
   </section>

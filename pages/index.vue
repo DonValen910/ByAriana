@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Bento />
+    <!-- Carrusel -->
     <Beneficios />
   </main>
 </template>

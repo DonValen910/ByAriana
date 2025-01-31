@@ -14,6 +14,13 @@ export default defineNuxtConfig({
   supabase: {
     redirect: false,
   },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true
+      }
+    }
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -28,5 +35,5 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/byariana.png' }
       ]
     }
-  }
+  },
 })

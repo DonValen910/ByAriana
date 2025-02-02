@@ -1,6 +1,6 @@
 <template>
   <main>
-    <!-- Carrusel -->
+    <Carusel />
     <Beneficios />
   </main>
 </template>

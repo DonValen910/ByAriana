@@ -59,7 +59,7 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   background: #000;
   border-radius: 5px;
   bottom: 0;

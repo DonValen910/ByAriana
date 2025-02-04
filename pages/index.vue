@@ -11,7 +11,7 @@
 
 <style>
 main {
-  width: 68.0625rem;
+  width: clamp(250px, 100%, 1089px);
   margin: 0 auto;
 }
 </style>

@@ -8,7 +8,7 @@
         <p class="beneficios__item-description">Garantizamos a nuestras clientas y clientes un servicio excelente y personalizado.</p>
       </div>
     </article>
-    <img src="/assets/Separador.svg" alt="">
+    <img src="/assets/Separador.svg" alt="Separador de secciones">
     <article class="beneficios__item inverted">
       <img class="beneficios__item-image" src="../assets/Eyes.svg" alt="Ilustración de unos ojos de pedicuria">
       <div class="beneficios__item-content">
@@ -27,10 +27,12 @@
 .beneficios {
   display: grid;
   place-items: center;
+  margin: 1rem;
+  gap: 1rem;
 }
 
 .beneficios__title {
-  font-size: 3.25rem;
+  font-size: clamp(2.5rem, 7vw, 3.25rem);
   text-align: center;
   font-family: 'Libre Baskerville', serif;
 }
@@ -40,6 +42,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: .5rem;
 }
 
 .inverted {
@@ -47,16 +50,16 @@
 }
 
 .beneficios__item-content {
-  max-width: 543px;
+  max-width: clamp(7.8125rem, 50%, 33.9375rem);
 }
 
 .beneficios__item-title {
-  font-size: 28px;
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
   font-weight: 800;
-  padding: 0 0 0.9375rem 0;
+  padding-bottom: clamp(0.3125rem, 2vw, 0.9375rem);
 }
 
 .beneficios__item-description {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 1.9vw, 1.5rem);
 }
 </style>

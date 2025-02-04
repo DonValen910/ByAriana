@@ -1,9 +1,6 @@
 <template>
   <footer class="footer">
     <div class="footer__content">
-      <NuxtLink to="/" class="footer__logo-link">
-        <img src="/assets/ByAriana-transparente.png" alt="Logo ByAriana" class="footer__logo">
-      </NuxtLink>
       <div class="footer__legal">
         <h4 class="footer__legal-title">Avisos Legales</h4>
         <span class="footer__legal-item">Políticas de privacidad</span>
@@ -35,39 +32,40 @@
 .footer__content {
   max-width: 56.8125rem;
   display: flex;
-  align-items: center;
   margin: 0 auto;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer__legal {
   display: grid;
   justify-items: center;
-  gap: 15px;
+  gap: 0.9375rem;
 }
 
 .footer__legal-title {
   font-weight: bold;
-  font-size: 28px;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer__legal-item {
-  font-size: 24px;
+  font-size: clamp(1.0625rem, 5vw, 1.5rem);
 }
 
 .footer__legal-derechos {
-  font-size: 20px;
+  font-size: clamp(0.8125rem, 5vw, 1.25rem);
 }
 
 .footer__social {
   display: flex;
-  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .footer__social-icon {
-  width: 4rem;
-  height: 4rem;
+  width: clamp(3rem, 2vw, 4rem);
+  height: clamp(3rem, 2vw, 4rem);
   transition: .3s;
 }
 

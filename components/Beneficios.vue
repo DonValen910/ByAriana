@@ -27,7 +27,7 @@
 .beneficios {
   display: grid;
   place-items: center;
-  margin: 1rem;
+  padding: 1rem;
   gap: 1rem;
 }
 

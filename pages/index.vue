@@ -1,12 +1,13 @@
 <template>
   <main>
-    <Carusel />
+    <Bento />
     <Beneficios />
   </main>
 </template>
 
 <script lang="ts" setup>
-
+import Beneficios from '~/components/Beneficios.vue';
+import Bento from '~/components/Bento.vue';
 </script>
 
 <style>

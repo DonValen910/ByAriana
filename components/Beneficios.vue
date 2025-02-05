@@ -50,7 +50,7 @@
 }
 
 .beneficios__item-content {
-  max-width: clamp(7.8125rem, 50%, 33.9375rem);
+  max-width: clamp(7.8125rem, 80%, 33.9375rem);
 }
 
 .beneficios__item-title {
@@ -61,5 +61,11 @@
 
 .beneficios__item-description {
   font-size: clamp(1.1rem, 1.9vw, 1.5rem);
+}
+
+@media screen and (max-width: 425px) {
+  .beneficios__item {
+    flex-direction: column;
+  }
 }
 </style>

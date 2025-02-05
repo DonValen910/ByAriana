@@ -117,15 +117,15 @@
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 330px) {
   .services__grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(10, 1fr);
   }
 
   .services__item--lifting {
     grid-column: span 4;
-    grid-row: span 4;
+    grid-row: span 7;
   }
 
   .services__item--mano, .services__item--pie {

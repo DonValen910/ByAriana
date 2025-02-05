@@ -4,16 +4,16 @@
     <div class="services__container">
       <div class="services__grid">
         <div class="services__item services__item--lifting">
-          <!-- Lifting -->
+          <span>Lifting</span>
         </div>
         <div class="services__item services__item--mano">
-          <!-- Manos -->
+          <span>Manicuria</span>
         </div>
         <div class="services__item services__item--pie">
-          <!-- Pies -->
+          <span>Pedicuria</span>
         </div>
         <div class="services__item services__item--facial">
-          <!-- Facial -->
+          <span>Facial</span>
         </div>
       </div>
     </div>
@@ -47,14 +47,11 @@
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 16px;
+  gap: 1rem;
 }
 
 .services__item {
   border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: .5s;
 }
 
@@ -69,6 +66,18 @@
   background-image: url("/resultado/Lifting/lifting_1.webp");
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services__item--lifting span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: rgb(225 178 230 / 80%);
+  font-size: clamp(1.8rem, 8vw, 2.25rem);
+  padding: 0.5rem 0;
 }
 
 .services__item--mano {
@@ -79,12 +88,32 @@
   background-position: center;
 }
 
+.services__item--mano span {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0.9375rem;
+  font-size: clamp(1.1rem, 6vw ,2.25rem);
+  background: linear-gradient(180deg, rgba(225,178,230,1) 23%, rgba(225,178,230,0.63) 57%, rgba(225,178,230,0.05) 100%);
+  border-radius: 1rem 1rem 0 0;
+}
+
 .services__item--pie {
   grid-column: span 1;
   grid-row: span 2;
   background-image: url("/resultado/Pies/pie_1.jpeg");
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.services__item--pie span {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 0.9375rem;
+  font-size: clamp(1.1rem, 6vw ,2.25rem);
+  background: linear-gradient(0deg, rgba(225,178,230,1) 23%, rgba(225,178,230,0.63) 57%, rgba(225,178,230,0.05) 100%);
+  border-radius: 0 0 1rem 1rem;
 }
 
 .services__item--facial {
@@ -93,6 +122,18 @@
   background-image: url("/resultado/Facial/facial_1.png");
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.services__item--facial span {
+  display: block;
+  text-align: end;
+  width: 100%;
+  padding: 0.5rem 0.9375rem 0.5rem 0;
+  font-size: clamp(1.1rem, 6vw ,2.25rem);
+  background: linear-gradient(0deg, rgba(225,178,230,1) 23%, rgba(225,178,230,0.63) 57%, rgba(225,178,230,0.05) 100%);
+  border-radius: 0 0 1rem 1rem;
 }
 
 @media screen and (max-width: 605px) {
@@ -133,9 +174,17 @@
     grid-row: span 2;
   }
 
+  :is(.services__item--mano, .services__item--pie) span {
+    padding: 0.2rem 0 0.2rem 0.5rem;
+  }
+
   .services__item--facial {
     grid-column: span 4;
     grid-row: span 1;
+  }
+
+  .services__item--facial span {
+    padding: 0.2rem 0.5rem 0.2rem 0;
   }
 }
 </style>

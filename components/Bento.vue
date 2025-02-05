@@ -94,4 +94,48 @@
   background-size: cover;
   background-position: center;
 }
+
+@media screen and (max-width: 605px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .services__item--lifting {
+    grid-column: span 2;
+    grid-row: span 4;
+  }
+
+  .services__item--mano, .services__item--pie {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .services__item--facial {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+
+  .services__item--lifting {
+    grid-column: span 4;
+    grid-row: span 4;
+  }
+
+  .services__item--mano, .services__item--pie {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .services__item--facial {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+}
 </style>

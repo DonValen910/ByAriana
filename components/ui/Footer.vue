@@ -46,16 +46,16 @@
 
 .footer__legal-title {
   font-weight: bold;
-  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-size: clamp(18px, 4.5vw, 1.75rem);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer__legal-item {
-  font-size: clamp(1.0625rem, 5vw, 1.5rem);
+  font-size: clamp(14px, 4.5vw, 1.5rem);
 }
 
 .footer__legal-derechos {
-  font-size: clamp(0.8125rem, 5vw, 1.25rem);
+  font-size: clamp(12px, 4.5vw, 1.25rem);
 }
 
 .footer__social {

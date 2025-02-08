@@ -20,7 +20,6 @@
       </ul>
     </nav>
 
-    <!-- Movemos el checkbox y el toggle fuera del header para que sean hermanos del mobile-nav -->
     <div class="mobile-menu-container">
       <input type="checkbox" id="checkbox">
       <label for="checkbox" class="toggle">
@@ -64,7 +63,6 @@
   padding: 0 6rem;
   position: sticky;
   top: 0;
-  z-index: 100;
 }
 
 .header__logo {
@@ -180,8 +178,7 @@
   background: #E1B2E6;
   transform: translateY(-200%);
   transition: transform 0.3s ease-in-out;
-  z-index: 90;
-  padding: 0rem 2rem 2rem;
+  padding: 2rem 2rem 2rem;
 }
 
 #checkbox:checked~.mobile-nav {
@@ -198,8 +195,6 @@
 .mobile-nav__link {
   font-size: 24px;
   position: relative;
-  color: #000;
-  text-decoration: none;
 }
 
 .mobile-nav__link::before {

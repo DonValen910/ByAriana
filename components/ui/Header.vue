@@ -20,12 +20,33 @@
       </ul>
     </nav>
 
-    <input type="checkbox" id="checkbox">
-    <label for="checkbox" class="toggle">
-      <div class="bars" id="bar1"></div>
-      <div class="bars" id="bar2"></div>
-      <div class="bars" id="bar3"></div>
-    </label>
+    <!-- Movemos el checkbox y el toggle fuera del header para que sean hermanos del mobile-nav -->
+    <div class="mobile-menu-container">
+      <input type="checkbox" id="checkbox">
+      <label for="checkbox" class="toggle">
+        <div class="bars" id="bar1"></div>
+        <div class="bars" id="bar2"></div>
+        <div class="bars" id="bar3"></div>
+      </label>
+
+      <!-- Menú móvil -->
+      <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+          <li class="mobile-nav__item">
+            <NuxtLink to="/servicios" class="mobile-nav__link" exact-active-class="active">Servicios</NuxtLink>
+          </li>
+          <li class="mobile-nav__item">
+            <NuxtLink to="/galeria" class="mobile-nav__link" exact-active-class="active">Galeria</NuxtLink>
+          </li>
+          <li class="mobile-nav__item">
+            <NuxtLink to="/contacto" class="mobile-nav__link" exact-active-class="active">Contacto</NuxtLink>
+          </li>
+          <li class="mobile-nav__item">
+            <NuxtLink to="/opiniones" class="mobile-nav__link" exact-active-class="active">Opiniones</NuxtLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -41,14 +62,17 @@
   width: 100%;
   height: 10.625rem;
   padding: 0 6rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__logo {
-  width: clamp(140px, 11vw, 175px);
+  width: clamp(8.125rem, 11vw, 10.9375rem);
 }
 
 .header__nav {
-  width: 467px;
+  width: 29.1875rem;
 }
 
 .header__nav-list {
@@ -58,7 +82,7 @@
 }
 
 .header__nav-link {
-  font-size: 24px;
+  font-size: 1.5rem;
   position: relative;
 }
 
@@ -80,6 +104,12 @@
   transform: scaleX(1);
 }
 
+/* Contenedor del menú móvil */
+.mobile-menu-container {
+  position: relative;
+  display: none;
+}
+
 #checkbox {
   display: none;
 }
@@ -95,6 +125,7 @@
   justify-content: center;
   gap: 10px;
   transition-duration: .5s;
+  z-index: 100;
 }
 
 .bars {
@@ -108,7 +139,8 @@
   transition-duration: .8s;
 }
 
-#bar1,#bar3 {
+#bar1,
+#bar3 {
   width: 70%;
 }
 
@@ -139,6 +171,55 @@
   transform: rotate(180deg);
 }
 
+/* Estilos del menú móvil */
+.mobile-nav {
+  position: fixed;
+  top: 10.625rem;
+  left: 0;
+  width: 100%;
+  background: #E1B2E6;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 90;
+  padding: 0rem 2rem 2rem;
+}
+
+#checkbox:checked~.mobile-nav {
+  transform: translateY(0);
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mobile-nav__link {
+  font-size: 24px;
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.mobile-nav__link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: #000;
+  border-radius: 5px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.mobile-nav__link:hover::before,
+.mobile-nav__link.active::before {
+  transform: scaleX(1);
+}
+
 @media (max-width: 1480px) {
   .header {
     padding: 0 2rem;
@@ -154,8 +235,24 @@
     display: none;
   }
 
+  .mobile-menu-container {
+    display: block;
+  }
+
   .toggle {
     display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 0 0.5rem;
   }
 }
 </style>

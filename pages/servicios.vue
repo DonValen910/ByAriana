@@ -1,8 +1,9 @@
 <template>
   <main class="main">
+    <Navegation />
     <h1 class="main__title">Descubre Nuestros Tratamientos</h1>
 
-    <section class="main__section main__section--manicuria">
+    <section id="manicuria" class="main__section main__section--manicuria">
       <h2 class="main__section-title">Manicuría</h2>
       <div class="main__section-content">
         <Card url="/resultado/Manos/mano_7.webp" alt="Imagen de manicuría común" title="Común" />
@@ -13,29 +14,30 @@
       </div>
     </section>
     
-    <section class="main__section main__section--pedicuria">
+    <section id="pedicuria" class="main__section main__section--pedicuria">
       <h2 class="main__section-title">Pedicuría</h2>
     </section>
 
-    <section class="main__section main__section--lifting">
+    <section id="lifting" class="main__section main__section--lifting">
       <h2 class="main__section-title">Lifting</h2>
     </section>
 
-    <section class="main__section main__section--facial">
+    <section id="facial" class="main__section main__section--facial">
       <h2 class="main__section-title">Facial</h2>
     </section>
 
-    <section class="main__section main__section--microblading">
+    <section id="microblading" class="main__section main__section--microblading">
       <h2 class="main__section-title">Microblading</h2>
     </section>
 
-    <section class="main__section main__section--masajes">
+    <section id="masajes" class="main__section main__section--masajes">
       <h2 class="main__section-title">Masajes</h2>
     </section>
   </main>
 </template>
 
 <script lang="ts" setup>
+import Navegation from '~/components/ui/Navegation.vue';
 import Card from '~/components/ServicesCard.vue';
 
 useHead({

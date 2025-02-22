@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <NuxtLink to="/" class="header__logo-link">
-      <img src="/assets/ByAriana-transparente.png" alt="Logo ByAriana" class="header__logo">
+      <img src="/assets/ByAriana-transparente.webp" width="151" heigth="146" alt="Logo ByAriana" class="header__logo">
     </NuxtLink>
     <nav class="header__nav">
       <ul class="header__nav-list">

@@ -8,7 +8,7 @@
       <li class="navigation__item"><a href="#microblading">Microblading</a></li>
       <li class="navigation__item"><a href="#masajes">Masajes</a></li>
     </ul>
-    <button class="navigation__btn" @click="toggleNavigation">Navegar</button>
+    <button class="navigation__btn" @click="toggleNavigation">{{ isActive ? "Cerrar" : "Navegar" }}</button>
   </nav>
 </template>
 
@@ -16,11 +16,9 @@
 import { ref } from 'vue';
 
 const isActive = ref(false);
-console.log(isActive.value);
 
 function toggleNavigation() {
   isActive.value = !isActive.value;
-  console.log(isActive.value);
 }
 </script>
 
@@ -32,17 +30,17 @@ function toggleNavigation() {
   border-radius: 0 0 1rem 1rem;
   margin: 0 1rem;
   z-index: 4;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; /* Animación suave */
 }
 
 .navigation__list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  transition: all .3s;
 }
 
-.navigation__item {
+.navigation__item a{
+  display: block;
   padding: 1rem;
   font-size: 1.25rem;
   cursor: pointer;
@@ -53,8 +51,17 @@ function toggleNavigation() {
 }
 
 @media (max-width: 425px) {
+  .navigation {
+    transform: translateY(-85.3%);
+    margin: -11.1875rem 1rem;
+  }
+
+  .navigation--active {
+    transform: translateY(0);
+  }
+
   .navigation__list {
-    display: none;
+    flex-direction: column;
   }
 
   .navigation__btn {
@@ -68,10 +75,6 @@ function toggleNavigation() {
     border-top: 1px solid black;
     border-radius: 0 0 1rem 1rem;
     cursor: pointer;
-  }
-
-  .navigation--active {
-    display: block;
   }
 }
 </style>

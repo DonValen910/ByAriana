@@ -52,34 +52,25 @@
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Estado para controlar si el header está oculto
 const isHeaderHidden = ref(false);
-
-// Variables para detectar la dirección del scroll
 let lastScrollPosition = 0;
 
-// Función para manejar el scroll
 const handleScroll = () => {
   const currentScrollPosition = window.scrollY;
 
-  // Ocultar el header si el usuario hace scroll hacia abajo
   if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 100) {
     isHeaderHidden.value = true;
   } else {
-    // Mostrar el header si el usuario hace scroll hacia arriba
     isHeaderHidden.value = false;
   }
 
-  // Actualizar la última posición de scroll
   lastScrollPosition = currentScrollPosition;
 };
 
-// Agregar el listener al montar el componente
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);
 });
 
-// Remover el listener al desmontar el componente
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll);
 });
@@ -96,7 +87,7 @@ onUnmounted(() => {
   padding: 0 6rem;
   position: sticky;
   top: 0;
-  z-index: 999999;
+  z-index: 99999999;
   transition: transform 0.3s ease-in-out;
 }
 

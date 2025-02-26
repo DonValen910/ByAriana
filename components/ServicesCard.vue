@@ -23,10 +23,11 @@ onMounted(() => {
   const driverObj = driver();
   driverObj.highlight({
     element: '.card',
-    language: 'es',
     popover: {
       title: 'Ver información',
       description: 'Podes ver la información de este servicio haciendo click en el botón "Más info".',
+      side: 'top',
+      align: 'end',
     },
   });
 });

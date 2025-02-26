@@ -9,11 +9,27 @@
 </template>
 
 <script lang="ts" setup>
+import { onMounted } from 'vue';
+import { driver } from "driver.js";
+import "driver.js/dist/driver.css";
+
 defineProps({
   url: String,
   alt: String,
   title: String,
 })
+
+onMounted(() => {
+  const driverObj = driver();
+  driverObj.highlight({
+    element: '.card',
+    language: 'es',
+    popover: {
+      title: 'Ver información',
+      description: 'Podes ver la información de este servicio haciendo click en el botón "Más info".',
+    },
+  });
+});
 </script>
 
 <style>

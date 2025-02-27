@@ -3,7 +3,7 @@
     <img class="card__image" :src="url" :alt="alt">
     <div class="card__content">
       <h3 class="card__content-title">{{ title }}</h3>
-      <button class="card__content-btn">Más info</button>
+      <button class="card__content-btn" @click="showInfo">Más info</button>
     </div>
   </div>
 </template>
@@ -13,11 +13,30 @@ import { onMounted } from 'vue';
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
 
-defineProps({
+const props = defineProps({
   url: String,
   alt: String,
   title: String,
-})
+  description: {
+    type: String,
+    default: ''
+  },
+  price: {
+    type: String,
+    default: ''
+  }
+});
+
+const emit = defineEmits(['show-info']);
+
+const showInfo = () => {
+  emit('show-info', {
+    url: props.url,
+    title: props.title,
+    description: props.description,
+    price: props.price
+  });
+};
 
 onMounted(() => {
   const driverObj = driver();

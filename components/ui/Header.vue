@@ -21,7 +21,7 @@
     </nav>
 
     <div class="mobile-menu-container">
-      <input type="checkbox" id="checkbox">
+      <input type="checkbox" id="checkbox" v-model="mobileMenuOpen">
       <label for="checkbox" class="toggle">
         <div class="bars" id="bar1"></div>
         <div class="bars" id="bar2"></div>
@@ -32,16 +32,16 @@
       <nav class="mobile-nav">
         <ul class="mobile-nav__list">
           <li class="mobile-nav__item">
-            <NuxtLink to="/servicios" class="mobile-nav__link" exact-active-class="active">Servicios</NuxtLink>
+            <NuxtLink to="/servicios" class="mobile-nav__link" exact-active-class="active" @click="closeMenu">Servicios</NuxtLink>
           </li>
           <li class="mobile-nav__item">
-            <NuxtLink to="/galeria" class="mobile-nav__link" exact-active-class="active">Galeria</NuxtLink>
+            <NuxtLink to="/galeria" class="mobile-nav__link" exact-active-class="active" @click="closeMenu">Galeria</NuxtLink>
           </li>
           <li class="mobile-nav__item">
-            <NuxtLink to="/contacto" class="mobile-nav__link" exact-active-class="active">Contacto</NuxtLink>
+            <NuxtLink to="/contacto" class="mobile-nav__link" exact-active-class="active" @click="closeMenu">Contacto</NuxtLink>
           </li>
           <li class="mobile-nav__item">
-            <NuxtLink to="/opiniones" class="mobile-nav__link" exact-active-class="active">Opiniones</NuxtLink>
+            <NuxtLink to="/opiniones" class="mobile-nav__link" exact-active-class="active" @click="closeMenu">Opiniones</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -50,9 +50,12 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const isHeaderHidden = ref(false);
+const mobileMenuOpen = ref(false);
 let lastScrollPosition = 0;
 
 const handleScroll = () => {
@@ -66,6 +69,14 @@ const handleScroll = () => {
 
   lastScrollPosition = currentScrollPosition;
 };
+
+const closeMenu = () => {
+  mobileMenuOpen.value = false;
+};
+
+watch(() => route.path, () => {
+  mobileMenuOpen.value = false;
+});
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll);

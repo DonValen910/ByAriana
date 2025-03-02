@@ -1,75 +1,38 @@
-# Nuxt Minimal Starter
+# 🌸 ByAriana 🌸
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Sitio web de servicios de belleza desarrollado con Nuxt.js. La plataforma proporciona información sobre los servicios disponibles, galería de trabajos y datos de contacto.
 
-## Setup
+## 🛠️ Tecnologías utilizadas
+- **Nuxt.js**: Framework basado en Vue 3.
+- **Typescript:** Superset de JavaScript con tipado estático.
+- **Driver.js:** Librería para guiar al usuario en la aplicación.
 
-Make sure to install dependencies:
+## ⚡Requisitos previos
+Antes de empezar, procurar tener estas  cosas en su computadora.
+- [**Git**](https://git-scm.com/ "**Git**")
+- [**Node js**](https://nodejs.org/es "**Node js**")
+- [**pnpm**](https://pnpm.io/ "**pnpm**")
 
+## 🚀 Instalación y uso
+Utilizar Git bash o cmd
 ```bash
-# npm
-npm install
+git clone https://github.com/DonValen910/ByAriana.git
 
-# pnpm
-pnpm install
+cd ByAriana
 
-# yarn
-yarn install
+pnpm install # o pnpm i
 
-# bun
-bun install
+pnpm dev # o pnpm run dev
 ```
 
-## Development Server
+📂 Estructura del proyecto
+- `ByAriana/`
+  - `pages/` → Páginas de la aplicación
+  - `components/` → Componentes reutilizables
+  - `layouts/` → Diseños generales
+  - `assets/` → Imágenes y estilos
+  - `public/` → Archivos estáticos
+  - `nuxt.config.ts` → Configuración de Nuxt.js
+  - `package.json` → Dependencias y scripts
 
-Start the development server on `http://localhost:3000`:
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

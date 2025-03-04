@@ -100,7 +100,7 @@
 .services__item--pie {
   grid-column: span 1;
   grid-row: span 2;
-  background-image: url("/resultado/Pies/pie_1.jpeg");
+  background-image: url("/resultado/Pies/pie_1.webp");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -119,7 +119,7 @@
 .services__item--facial {
   grid-column: span 2;
   grid-row: span 2;
-  background-image: url("/resultado/Facial/facial_1.png");
+  background-image: url("/resultado/Facial/facial_1.webp");
   background-size: cover;
   background-position: center;
   display: flex;

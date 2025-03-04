@@ -46,7 +46,36 @@
     
     <section id="pedicuria" class="main__section main__section--pedicuria">
       <h2 class="main__section-title">Pedicuría</h2>
-      <!-- Agregar cards de pedicuría con sus respectivos datos -->
+      <div class="main__section-content">
+        <Card 
+        url="/resultado/Pies/pie_2.webp"
+        atl="Imagen de belleza común"
+        title="Belleza"
+        price="$11.000"
+        @show-info="showDialog"
+        />
+        <Card 
+        url="/resultado/Pies/pie_3.webp"
+        atl="Imagen de belleza semipermanente"
+        title="Belleza semi"
+        price="$15.000"
+        @show-info="showDialog"
+        />
+        <Card 
+        url="/resultado/Pies/pie_5.webp"
+        atl="Imagen de pedicuría común"
+        title="Pedicuría"
+        price="$18.000"
+        @show-info="showDialog"
+        />
+        <Card 
+        url="/resultado/Pies/pie_7.webp"
+        atl="Imagen de pedicuría semipermanente"
+        title="Pedicuría semi"
+        price="$20.000"
+        @show-info="showDialog"
+        />
+      </div>
     </section>
 
     <section id="lifting" class="main__section main__section--lifting">

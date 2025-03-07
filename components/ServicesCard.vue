@@ -9,8 +9,6 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
-
 const props = defineProps({
   url: String,
   alt: String,
@@ -39,15 +37,15 @@ const showInfo = () => {
 
 <style>
 .card {
-  width: 325px;
-  height: 325px;
+  width: 20.3125rem;
+  height: 20.3125rem;
   transition: all .5s;
   border-radius: 1rem;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px #000000;
+  box-shadow: 0 0 0.9375rem #000000;
 }
 
 .card__image {
@@ -76,7 +74,7 @@ const showInfo = () => {
 .card__content-btn {
   border: none;
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   background: #703e78;
   color: white;
   cursor: pointer;

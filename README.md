@@ -5,9 +5,8 @@ Sitio web de servicios de belleza desarrollado con Nuxt.js. La plataforma propor
 ## 🛠️ Tecnologías utilizadas
 - **Nuxt.js**: Framework basado en Vue 3.
 - **Typescript:** Superset de JavaScript con tipado estático.
-- **Driver.js:** Librería para guiar al usuario en la aplicación.
 
-## ⚡Requisitos previos
+## ⚡ Requisitos previos
 Antes de empezar, procurar tener estas  cosas en su computadora.
 - [**Git**](https://git-scm.com/ "**Git**")
 - [**Node js**](https://nodejs.org/es "**Node js**")

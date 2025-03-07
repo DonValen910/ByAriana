@@ -10,8 +10,6 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import { driver } from "driver.js";
-import "driver.js/dist/driver.css";
 
 const props = defineProps({
   url: String,
@@ -37,19 +35,6 @@ const showInfo = () => {
     price: props.price
   });
 };
-
-onMounted(() => {
-  const driverObj = driver();
-  driverObj.highlight({
-    element: '.card',
-    popover: {
-      title: 'Ver información',
-      description: 'Podes ver la información de este servicio haciendo click en el botón "Más info".',
-      side: 'top',
-      align: 'end',
-    },
-  });
-});
 </script>
 
 <style>

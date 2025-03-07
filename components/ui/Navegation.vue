@@ -6,6 +6,7 @@
       <li class="navigation__item"><a href="#manicuria">Manicuría</a></li>
       <li class="navigation__item"><a href="#pedicuria">Pedicuría</a></li>
       <li class="navigation__item"><a href="#lifting">Lifting</a></li>
+      <li class="navigation__item"><a href="#perfilado">Perfilado</a></li>
       <li class="navigation__item"><a href="#facial">Facial</a></li>
       <li class="navigation__item"><a href="#microblading">Microblading</a></li>
       <li class="navigation__item"><a href="#masajes">Masajes</a></li>

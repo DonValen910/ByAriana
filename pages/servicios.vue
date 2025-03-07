@@ -44,25 +44,25 @@
       <div class="main__section-content">
         <Card 
           url="/resultado/Pies/pie_2.webp" 
-          atl="Imagen de belleza común" 
+          alt="Imagen de belleza común" 
           title="Belleza" 
           price="$11.000"
           @show-info="showDialog" />
         <Card 
           url="/resultado/Pies/pie_3.webp" 
-          atl="Imagen de belleza semipermanente" 
+          alt="Imagen de belleza semipermanente" 
           title="Belleza semi"
           price="$15.000" 
           @show-info="showDialog" />
         <Card 
           url="/resultado/Pies/pie_5.webp" 
-          atl="Imagen de pedicuría común" 
+          alt="Imagen de pedicuría común" 
           title="Pedicuría" 
           price="$18.000"
           @show-info="showDialog" />
         <Card 
           url="/resultado/Pies/pie_7.webp" 
-          atl="Imagen de pedicuría semipermanente" 
+          alt="Imagen de pedicuría semipermanente" 
           title="Pedicuría semi"
           price="$20.000" 
           @show-info="showDialog" />
@@ -75,7 +75,7 @@
         <Card
           class="card-lifting"
           url="/resultado/Lifting/lifting_15.webp" 
-          atl="Imagen de lifting de pestañas" 
+          alt="Imagen de lifting de pestañas" 
           price="$25.000"
           @show-info="showDialog"
         />

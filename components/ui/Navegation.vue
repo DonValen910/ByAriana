@@ -3,13 +3,13 @@
     { 'navigation--active': isActive },
     { 'navigation--hidden': isNavigationHidden }]">
     <ul class="navigation__list">
-      <li class="navigation__item"><a href="#manicuria">Manicuría</a></li>
-      <li class="navigation__item"><a href="#pedicuria">Pedicuría</a></li>
-      <li class="navigation__item"><a href="#lifting">Lifting</a></li>
-      <li class="navigation__item"><a href="#perfilado">Perfilado</a></li>
-      <li class="navigation__item"><a href="#facial">Facial</a></li>
-      <li class="navigation__item"><a href="#microblading">Microblading</a></li>
-      <li class="navigation__item"><a href="#masajes">Masajes</a></li>
+      <li class="navigation__item"><a href="#manicuria" @click="handleLinkClick">Manicuría</a></li>
+      <li class="navigation__item"><a href="#pedicuria" @click="handleLinkClick">Pedicuría</a></li>
+      <li class="navigation__item"><a href="#lifting" @click="handleLinkClick">Lifting</a></li>
+      <li class="navigation__item"><a href="#perfilado" @click="handleLinkClick">Perfilado</a></li>
+      <li class="navigation__item"><a href="#facial" @click="handleLinkClick">Facial</a></li>
+      <li class="navigation__item"><a href="#microblading" @click="handleLinkClick">Microblading</a></li>
+      <li class="navigation__item"><a href="#masajes" @click="handleLinkClick">Masajes</a></li>
     </ul>
     <button class="navigation__btn" @click="toggleNavigation">{{ isActive ? "Cerrar" : "Navegar" }}</button>
   </nav>
@@ -22,6 +22,12 @@ const isActive = ref(false);
 
 function toggleNavigation() {
   isActive.value = !isActive.value;
+}
+
+function handleLinkClick() {
+  if (window.innerWidth <= 425) {
+    isActive.value = false;
+  }
 }
 
 const isNavigationHidden = ref(false);
@@ -82,7 +88,7 @@ onUnmounted(() => {
 
 @media (max-width: 425px) {
   .navigation {
-    transform: translateY(-85.3%);
+    transform: translateY(-87.1%);
     margin: -11.1875rem 1rem;
   }
 

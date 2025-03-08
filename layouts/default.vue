@@ -2,6 +2,7 @@
   <div>
     <uiHeader />
     <slot />
+    <WhatsappFloatingButton />
     <uiFooter />
   </div>
 </template>

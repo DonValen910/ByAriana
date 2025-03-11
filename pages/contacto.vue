@@ -4,7 +4,7 @@
       <ul class="contacto__info-list">
         <li class="contacto__info-item">
           <img src="/assets/Map.svg" alt="Icono de mapa" class="contacto__info-icon">
-          <a href="" target="_blank" class="contacto__info-link">Samuel Miguel Spiro 995, B1846 Adrogué, Provincia de
+          <a href="https://www.google.com.ar/maps/place/Ariana/@-34.7994419,-58.3952661,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcd34fafb0a99d:0x93660a3aba2ac555!8m2!3d-34.7994463!4d-58.3926912!16s%2Fg%2F11s663ls04?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contacto__info-link">Samuel Miguel Spiro 995, B1846 Adrogué, Provincia de
             Buenos Aires</a>
         </li>
         <li class="contacto__info-item">

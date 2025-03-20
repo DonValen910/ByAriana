@@ -25,6 +25,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/webp', href: '/byariana.webp' }
       ]
-    }
+    },
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 })

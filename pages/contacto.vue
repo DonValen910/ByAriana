@@ -36,8 +36,10 @@ useHead({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
   gap: 3rem;
   width: auto;
+  min-height: 45dvh;
   margin: 5rem 1rem;
 }
 
@@ -71,6 +73,7 @@ useHead({
 
 .contacto__info-link:hover {
   text-decoration: underline;
+  color: rgb(64, 120, 224)
 }
 
 .contacto__map iframe {

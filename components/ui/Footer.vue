@@ -1,9 +1,9 @@
 <template>
-  <footer class="footer">
+  <footer v-if="!isTerminosDeUsoPage" class="footer">
     <div class="footer__content">
       <div class="footer__legal">
         <h3 class="footer__legal-title">Avisos Legales</h3>
-        <span class="footer__legal-item">Políticas de privacidad</span>
+        <NuxtLink to="/terminosDeUso" class="footer__legal-item">Políticas de privacidad</NuxtLink>
         <span class="footer__legal-item">Términos de uso</span>
         <span class="footer__legal-derechos">© ByAriana | Todos los derechos reservados</span>
       </div>
@@ -20,7 +20,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
+const isTerminosDeUsoPage = route.path === '/terminosDeUso';
 </script>
 
 <style>

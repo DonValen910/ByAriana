@@ -1,10 +1,10 @@
 <template>
-  <footer v-if="!isTerminosDeUsoPage" class="footer">
+  <footer v-show="!isLegalPage" class="footer">
     <div class="footer__content">
       <div class="footer__legal">
         <h3 class="footer__legal-title">Avisos Legales</h3>
-        <NuxtLink to="/terminosDeUso" class="footer__legal-item">Políticas de privacidad</NuxtLink>
-        <span class="footer__legal-item">Términos de uso</span>
+        <NuxtLink to="/politicaDePrivacidad" class="footer__legal-item">Políticas de privacidad</NuxtLink>
+        <NuxtLink to="/terminosDeUso" class="footer__legal-item">Términos de uso</NuxtLink>
         <span class="footer__legal-derechos">© ByAriana | Todos los derechos reservados</span>
       </div>
       <div class="footer__social">
@@ -21,9 +21,25 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
+import { computed, onMounted, ref, watch } from 'vue';
 
 const route = useRoute();
-const isTerminosDeUsoPage = route.path === '/terminosDeUso';
+const isLegalPage = ref(false);
+
+// Usar una función computed para evaluar la ruta actual
+const checkIfLegalPage = computed(() => {
+  return route.path === '/terminosDeUso' || route.path === '/politicaDePrivacidad';
+});
+
+// Actualizar isLegalPage cuando cambia la ruta
+watch(() => route.path, (newPath) => {
+  isLegalPage.value = newPath === '/terminosDeUso' || newPath === '/politicaDePrivacidad';
+}, { immediate: true });
+
+// Asegurar que se evalúe correctamente al cargar el componente
+onMounted(() => {
+  isLegalPage.value = checkIfLegalPage.value;
+});
 </script>
 
 <style>
@@ -55,6 +71,10 @@ const isTerminosDeUsoPage = route.path === '/terminosDeUso';
 
 .footer__legal-item {
   font-size: clamp(14px, 4.5vw, 1.5rem);
+}
+
+.footer__legal-item:hover {
+  text-decoration: underline;
 }
 
 .footer__legal-derechos {

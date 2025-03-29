@@ -54,7 +54,7 @@ onUnmounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .navigation {
   position: sticky;
   top: 10.625rem;

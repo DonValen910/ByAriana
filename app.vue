@@ -17,7 +17,7 @@ useHead({
 })
 </script>
 
-<style>
+<style sscoped>
 .page-enter-active,
 .page-leave-active {
   transition: all 0.5s;

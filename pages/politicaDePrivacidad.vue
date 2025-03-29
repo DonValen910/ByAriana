@@ -75,7 +75,7 @@
 
 <script lang="ts" setup></script>
 
-<style>
+<style scoped>
 .privacy__container {
   margin: 1rem;
 }

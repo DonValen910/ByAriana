@@ -72,7 +72,7 @@
 
 <script lang="ts" setup></script>
 
-<style>
+<style scoped>
 .terms__container {
   margin: 1rem;
 }

@@ -20,7 +20,7 @@
   </section>
 </template>
 
-<style>
+<style scoped>
 .services {
   display: grid;
   gap: 1rem;

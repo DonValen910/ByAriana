@@ -10,6 +10,6 @@ useHead({
 })
 </script>
 
-<style>
+<style scoped>
 
 </style>

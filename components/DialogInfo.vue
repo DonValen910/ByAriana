@@ -47,7 +47,7 @@ const closeDialog = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .dialog-overlay {
   position: fixed;
   top: 0;

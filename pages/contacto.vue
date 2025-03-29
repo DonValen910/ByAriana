@@ -31,7 +31,7 @@ useHead({
 })
 </script>
 
-<style>
+<style scoped>
 .contacto {
   display: flex;
   justify-content: center;

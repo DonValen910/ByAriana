@@ -165,7 +165,7 @@ const closeDialog = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .main__title {
   text-align: center;
   font-size: 3rem;

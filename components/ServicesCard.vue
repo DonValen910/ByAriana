@@ -35,7 +35,7 @@ const showInfo = () => {
 };
 </script>
 
-<style>
+<style scoped>
 .card {
   width: 20.3125rem;
   height: 20.3125rem;

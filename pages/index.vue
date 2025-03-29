@@ -10,7 +10,7 @@ import Beneficios from '~/components/Beneficios.vue';
 import Bento from '~/components/Bento.vue';
 </script>
 
-<style>
+<style scoped>
 main {
   width: clamp(250px, 100%, 1089px);
   margin: 0 auto;

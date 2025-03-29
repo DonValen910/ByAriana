@@ -42,7 +42,7 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .footer {
   background: #E1B2E6;
   width: 100%;

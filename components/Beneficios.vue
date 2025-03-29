@@ -23,7 +23,7 @@
 
 </script>
 
-<style>
+<style scoped>
 .beneficios {
   display: grid;
   place-items: center;

@@ -3,8 +3,8 @@
     <div class="footer__content">
       <div class="footer__legal">
         <h3 class="footer__legal-title">Avisos Legales</h3>
-        <NuxtLink to="/politicaDePrivacidad" class="footer__legal-item">Políticas de privacidad</NuxtLink>
-        <NuxtLink to="/terminosDeUso" class="footer__legal-item">Términos de uso</NuxtLink>
+        <NuxtLink to="/legal/politicaDePrivacidad" class="footer__legal-item">Políticas de privacidad</NuxtLink>
+        <NuxtLink to="/legal/terminosDeUso" class="footer__legal-item">Términos de uso</NuxtLink>
         <span class="footer__legal-derechos">© ByAriana | Todos los derechos reservados</span>
       </div>
       <div class="footer__social">

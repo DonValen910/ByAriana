@@ -7,11 +7,37 @@
 }
 
 body {
-    /*Tipografia principal*/ font-family: 'Lora Variable', serif;
+    /*Tipografia principal*/
+    font-family: 'Lora Variable', serif;
     /*Tipografia secundaria font-family: 'Libre Baskerville', serif; */
+    --sb-track-color: #121111a8;
+    --sb-thumb-color: #e1b2e6;
+    --sb-size: 14px;
 }
 
-h1, h2, h3, h4 {
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 5px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
     text-wrap: balance;
 }
 

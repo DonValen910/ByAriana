@@ -2,77 +2,40 @@
   <main class="gallery">
     <h1 class="gallery__title">Galería</h1>
     
-    <div class="gallery__tabs">
+    <div class="gallery__filter">
+      <button 
+        class="gallery__filter-button"
+        :class="{ 'gallery__filter-button--active': selectedCategory === null }"
+        @click="selectedCategory = null"
+      >
+        Todos
+      </button>
       <button 
         v-for="(category, index) in categories" 
         :key="index" 
         @click="selectedCategory = index"
-        :class="{ 'gallery__tab--active': selectedCategory === index }"
-        class="gallery__tab"
+        :class="{ 'gallery__filter-button--active': selectedCategory === index }"
+        class="gallery__filter-button"
       >
         {{ getCategoryName(index) }}
       </button>
     </div>
 
-    <!-- Manicuria Section -->
-    <div v-if="selectedCategory === 0" class="gallery__grid">
-      <div v-for="photo in manosPhotos" :key="photo.id" class="gallery__item">
-        <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
+    <div class="gallery__masonry">
+      <div 
+        v-for="photo in filteredPhotos" 
+        :key="photo.id" 
+        class="gallery__item"
+      >
+        <img 
+          :src="photo.url.replace('public', '')" 
+          :alt="photo.description" 
+          loading="lazy" 
+          class="gallery__image" 
+        />
         <div class="gallery__overlay">
           <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lifting Section -->
-    <div v-if="selectedCategory === 1" class="gallery__grid">
-      <div v-for="photo in liftingPhotos" :key="photo.id" class="gallery__item">
-        <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
-        <div class="gallery__overlay">
-          <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pedicuria Section -->
-    <div v-if="selectedCategory === 2" class="gallery__grid">
-      <div v-for="photo in piesPhotos" :key="photo.id" class="gallery__item">
-        <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
-        <div class="gallery__overlay">
-          <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Facial Section -->
-    <div v-if="selectedCategory === 3" class="gallery__grid">
-      <div v-for="photo in facialPhotos" :key="photo.id" class="gallery__item">
-        <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
-        <div class="gallery__overlay">
-          <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- Perfilado Section -->
-    <div v-if="selectedCategory === 4" class="gallery__section gallery__section--perfilado">
-      <h2 class="gallery__subtitle">Perfilado Común</h2>
-      <div class="gallery__grid">
-        <div v-for="photo in perfiladoComunPhotos" :key="photo.id" class="gallery__item">
-          <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
-          <div class="gallery__overlay">
-            <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-          </div>
-        </div>
-      </div>
-
-      <h2 class="gallery__subtitle">Perfilado con Henna</h2>
-      <div class="gallery__grid">
-        <div v-for="photo in perfiladoHennaPhotos" :key="photo.id" class="gallery__item">
-          <img :src="photo.url.replace('public', '')" :alt="photo.description" loading="lazy" class="gallery__image" />
-          <div class="gallery__overlay">
-            <h3 class="gallery__overlay-title">{{ photo.title }}</h3>
-          </div>
+          <p class="gallery__overlay-category">{{ photo.category }}</p>
         </div>
       </div>
     </div>
@@ -88,14 +51,89 @@ useHead({
 });
 
 const categories = [0, 1, 2, 3, 4]; // Indices for each category
-const selectedCategory = ref(0);
+const selectedCategory = ref<number | null>(null); // Ahora comienza como null para mostrar todas las categorías
 
-const manosPhotos = computed(() => PHOTOS[0].manos);
-const liftingPhotos = computed(() => PHOTOS[1].lifting);
-const piesPhotos = computed(() => PHOTOS[2].pies);
-const facialPhotos = computed(() => PHOTOS[3].facial);
-const perfiladoComunPhotos = computed(() => PHOTOS[4]?.perfilado?.[0]?.comun);
-const perfiladoHennaPhotos = computed(() => PHOTOS[4]?.perfilado?.[1]?.henna);
+// Define an interface for photo objects
+interface Photo {
+  id: string | number;
+  url: string;
+  title: string;
+  description: string;
+  category: string;
+}
+
+// Obtener todas las fotos y añadir información de categoría
+const allPhotos = computed(() => {
+  const photos: Photo[] = [];
+  
+  // Manicuria
+  PHOTOS[0]?.manos?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Manicuria'
+    });
+  });
+
+  // Lifting
+  PHOTOS[1]?.lifting?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Lifting'
+    });
+  });
+
+  // Pedicuria
+  PHOTOS[2]?.pies?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Pedicuria'
+    });
+  });
+
+  // Facial
+  PHOTOS[3]?.facial?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Facial'
+    });
+  });
+
+  // Perfilado Común
+  PHOTOS[4]?.perfilado?.[0]?.comun?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Perfilado Común'
+    });
+  });
+
+  // Perfilado con Henna
+  PHOTOS[4]?.perfilado?.[1]?.henna?.forEach(photo => {
+    photos.push({
+      ...photo,
+      category: 'Perfilado con Henna'
+    });
+  });
+
+  return photos;
+});
+
+// Filtrar fotos según la categoría seleccionada
+const filteredPhotos = computed(() => {
+  if (selectedCategory.value === null) {
+    return allPhotos.value;
+  }
+
+  switch (selectedCategory.value) {
+    case 0: return allPhotos.value.filter(photo => photo.category === 'Manicuria');
+    case 1: return allPhotos.value.filter(photo => photo.category === 'Lifting');
+    case 2: return allPhotos.value.filter(photo => photo.category === 'Pedicuria');
+    case 3: return allPhotos.value.filter(photo => photo.category === 'Facial');
+    case 4: return allPhotos.value.filter(photo => 
+      photo.category === 'Perfilado Común' || photo.category === 'Perfilado con Henna'
+    );
+    default: return allPhotos.value;
+  }
+});
 
 function getCategoryName(index: number): string {
   switch (index) {
@@ -118,15 +156,11 @@ function getCategoryName(index: number): string {
 
 .gallery__title {
   text-align: center;
-  margin-bottom: 1.875rem;
+  margin-bottom: 1.5rem;
   font-size: 3rem;
 }
 
-.gallery__subtitle {
-  margin: 1.875rem 0 0.9375rem 0;
-}
-
-.gallery__tabs {
+.gallery__filter {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -134,8 +168,8 @@ function getCategoryName(index: number): string {
   margin-bottom: 1.875rem;
 }
 
-.gallery__tab {
-  font-size: .9rem;
+.gallery__filter-button {
+  font-size: 0.9rem;
   padding: 0.625rem 1.25rem;
   background: #f4f4f4;
   border: 1px solid #0000003b;
@@ -144,38 +178,42 @@ function getCategoryName(index: number): string {
   transition: all 0.3s ease;
 }
 
-.gallery__tab:hover {
+.gallery__filter-button:hover {
   background: #e1b2e6b7;
 }
 
-.gallery__tab--active {
+.gallery__filter-button--active {
   background: #E1B2E6;
   box-shadow: 0 0 10px #00000094;
 }
 
-.gallery__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+.gallery__masonry {
+  columns: 4;
+  column-gap: 16px;
 }
 
 .gallery__item {
+  break-inside: avoid;
+  margin-bottom: 16px;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  aspect-ratio: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: inline-block;
+  width: 100%;
+}
+
+.gallery__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .gallery__image {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.gallery__item:hover .gallery__image {
-  transform: scale(1.05);
+  height: auto;
+  object-fit: contain;
 }
 
 .gallery__overlay {
@@ -183,9 +221,9 @@ function getCategoryName(index: number): string {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
   color: white;
-  padding: 10px;
+  padding: 15px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -194,17 +232,36 @@ function getCategoryName(index: number): string {
   opacity: 1;
 }
 
-.gallery__section--perfilado {
-  margin-top: 20px;
+.gallery__overlay-title {
+  margin: 0;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-  .gallery__grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+.gallery__overlay-category {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 1200px) {
+  .gallery__masonry {
+    columns: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery__masonry {
+    columns: 2;
+  }
+}
+
+@media (max-width: 580px) {
+  .gallery__masonry {
+    columns: 1;
   }
   
-  .gallery__tab {
+  .gallery__filter-button {
     padding: 8px 16px;
     font-size: 14px;
   }

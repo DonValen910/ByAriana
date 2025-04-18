@@ -166,12 +166,6 @@ export const PHOTOS = [
         title: 'Lifting',
         description: 'Imagen de lifting',
         url: `${pathLifting}/lifting_16.webp`,
-      },
-      {
-        id: '17',
-        title: 'Lifting',
-        description: 'Imagen de lifting',
-        url: `${pathLifting}/lifting_17.webp`,
       }
     ]
   },

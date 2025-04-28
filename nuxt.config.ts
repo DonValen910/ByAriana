@@ -3,22 +3,22 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   css: ["~/assets/main.css"],
   devtools: { enabled: true },
-  modules: ['@nuxtjs/supabase'],
-  supabase: {
-    url: process.env.SUPABASE_URL,
-    key: process.env.SUPABASE_KEY,
-    redirectOptions: {
-      login: '/login',
-      callback: '/register',
-      exclude: ['/', '/contacto', '/opiniones', '/servicios', '/galeria', '/contacto', '/legal/politicaDePrivacidad', '/legal/terminosdeuso']
-    }
-  },
-  runtimeConfig: {
-    public: {
-      supabaseUrl: process.env.SUPABASE_URL,
-      supabaseKey: process.env.SUPABASE_KEY,
-    }
-  },
+  // modules: ['@nuxtjs/supabase'],
+  // supabase: {
+  //   url: process.env.SUPABASE_URL,
+  //   key: process.env.SUPABASE_KEY,
+  //   redirectOptions: {
+  //     login: '/login',
+  //     callback: '/register',
+  //     exclude: ['/', '/contacto', '/opiniones', '/servicios', '/galeria', '/contacto', '/legal/politicaDePrivacidad', '/legal/terminosdeuso']
+  //   }
+  // },
+  // runtimeConfig: {
+  //   public: {
+  //     supabaseUrl: process.env.SUPABASE_URL,
+  //     supabaseKey: process.env.SUPABASE_KEY,
+  //   }
+  // },
   plugins: [],
   vite: {
     server: {

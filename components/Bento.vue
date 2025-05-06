@@ -3,18 +3,18 @@
     <h1 class="services__title">Servicios</h1>
     <div class="services__container">
       <div class="services__grid">
-        <div class="services__item services__item--lifting">
+        <NuxtLink to="/servicios#lifting" class="services__item services__item--lifting">
           <span>Lifting</span>
-        </div>
-        <div class="services__item services__item--mano">
+        </NuxtLink>
+        <NuxtLink to="/servicios#manicuria" class="services__item services__item--mano">
           <span>Manicuria</span>
-        </div>
-        <div class="services__item services__item--pie">
+        </NuxtLink>
+        <NuxtLink to="/servicios#pedicuria" class="services__item services__item--pie">
           <span>Pedicuria</span>
-        </div>
-        <div class="services__item services__item--facial">
+        </NuxtLink>
+        <NuxtLink to="/servicios#facial" class="services__item services__item--facial">
           <span>Facial</span>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </section>
